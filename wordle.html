@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Une variante du Wordle en Français</title>
+    <link rel="shortcut icon" type="image/x-icon" href="icons/favicon-W.ico" />
+    <link rel="stylesheet" href="wordle.css" />
+  </head>
+  <body onload="init()">
+    <h1>Une variante du <span class="wordle">Wordle</span> en Français</h1>
+
+    <section id="section_du_haut">
+      <p class="info">
+        But du jeu : Trouvez le mot de 5 lettres avec le minimum d'essais
+        possibles.<br>
+        Vous pouvez lancer une nouvelle partie pour avoir un nouveau mot.<br>
+      </p>
+    </section>
+
+    <section id="section_du_milieu">
+      <section id="grille_jeu">
+        <div id="ligne_1" class="essai" data-num-essai="1">
+          <input type="text" disabled autocomplete="off" class="case_active" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+        </div>
+        <div id="ligne_2" class="essai" data-num-essai="2">
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+        </div>
+        <div id="ligne_3" class="essai" data-num-essai="3">
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+        </div>
+        <div id="ligne_4" class="essai" data-num-essai="4">
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+        </div>
+        <div id="ligne_5" class="essai" data-num-essai="5">
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+        </div>
+        <div id="ligne_6" class="essai" data-num-essai="6">
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+          <input type="text" disabled autocomplete="off" />
+        </div>
+      </section>
+
+      <section>
+        <section id="zone_messages">
+          <p id="message_mot_incomplet" class="message avertissement">
+            Il faut saisir un mot de 5 lettres pour pouvoir valider !
+          </p>
+
+          <p id="message_partie_perdue" class="message perdu">
+            Dommage, c'est perdu...
+          </p>
+
+          <p id="message_partie_gagnee" class="message gagne">
+            Bravo ! Vous avez trouvé en <span id="nb_essais">X</span> essai(s) !
+          </p>
+
+          <p id="message_mot_pas_fr" class="message avertissement">
+            Il faut un mot français !
+          </p>
+        </section>
+
+        <section id="clavier_jeu">
+          <div>
+            <button class="bouton_simple">A</button>
+            <button class="bouton_simple">Z</button>
+            <button class="bouton_simple">E</button>
+            <button class="bouton_simple">R</button>
+            <button class="bouton_simple">T</button>
+            <button class="bouton_simple">Y</button>
+            <button class="bouton_simple">U</button>
+            <button class="bouton_simple">I</button>
+            <button class="bouton_simple">O</button>
+            <button class="bouton_simple">P</button>
+            <button id="bouton_effacer" class="gros_bouton">
+              <img src="icons/suppr.svg" alt="Bouton Effacer" />
+            </button>
+          </div>
+
+          <div>
+            <button class="bouton_simple">Q</button>
+            <button class="bouton_simple">S</button>
+            <button class="bouton_simple">D</button>
+            <button class="bouton_simple">F</button>
+            <button class="bouton_simple">G</button>
+            <button class="bouton_simple">H</button>
+            <button class="bouton_simple">J</button>
+            <button class="bouton_simple">K</button>
+            <button class="bouton_simple">L</button>
+            <button class="bouton_simple">M</button>
+            <button id="bouton_valider" class="gros_bouton">
+              <img src="icons/entrer.svg" alt="Bouton Valider" />
+            </button>
+          </div>
+
+          <div>
+            <button class="bouton_simple">W</button>
+            <button class="bouton_simple">X</button>
+            <button class="bouton_simple">C</button>
+            <button class="bouton_simple">V</button>
+            <button class="bouton_simple">B</button>
+            <button class="bouton_simple">N</button>
+          </div>
+
+          <div>
+            <button id="bouton_nouvelle_partie" class="tres_gros_bouton">
+              Lancer une nouvelle partie
+            </button>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <section id="section_du_bas">
+      <p class="info">
+        <b>Nombre de parties gagnées</b> : <span id="nb_mots_trouves">0</span> mot(s) trouvé(s)<br>
+        <b>Meilleur score</b> : Un mot trouvé en  <span id="meilleur_nb_essais">0</span> essai(s)</p>
+    </section>
+
+    <!-- Intégration des scripts JS -->
+    <script src="fonctions_fournies.js"></script>
+    <script src="fonctions_a_completer.js"></script>
+  </body>
+</html>
