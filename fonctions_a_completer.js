@@ -6,7 +6,6 @@ let motMystere;
 /**
  * Fonction qui initialise le jeu
  * (Fonction appelée automatiquement au chargement de la page)
- * (FONCTION À COMPLÉTER)
  */
 function init() {
   // Initialisation du mot mystère à retrouver
@@ -34,7 +33,6 @@ function init() {
 /**
  * Fonction qui cache tous les messages de la section 
  * "zone_messages".
- * (FONCTION À COMPLÉTER)
  */
  function cacheTousLesMessages() {
     for (let i = 0; i < document.getElementById("zone_messages").children.length; i++) {
@@ -49,8 +47,6 @@ function init() {
  * et enfin décale la case active à droite (si cela est possible).
  * (Fonction qui se déclenche quand on clic sur un des
  * boutons du clavier du jeu)
- * @param bouton : Elément HTML correspondant au bouton à actionner
- * (FONCTION À COMPLÉTER)
  */
 function actionne(bouton) {
   caseActive=retourneCaseActive();
@@ -68,7 +64,6 @@ function actionne(bouton) {
  * Fonction qui efface le contenu de la case active,
  * et qui décale ensuite la case active à gauche
  * (si le décalage est possible).
- * (FONCTION À COMPLÉTER)
  */
 function effaceCaseActive() {
   caseActive=retourneCaseActive();
@@ -84,9 +79,6 @@ function effaceCaseActive() {
 /**
  * Fonction qui retourne vrai si la ligne passée en paramètre est complète
  * (c'est-à-dire si les 5 cases <input> ont une lettre renseignée)
- * @param ligne : Élément HTML correspondant à la ligne à vérifier
- * @returns Un booléen indiquant si la ligne est complète ou non
- * (FONCTION À COMPLÉTER) 
  */
 function verifieSiLigneComplete(ligne){
   for (let i = 0; i < ligne.children.length; i++) {
@@ -100,7 +92,6 @@ function verifieSiLigneComplete(ligne){
     }
   }
     return reponse;
-  // TODO Faire en sorte que la fonction retourne un booléen
 }
 
 /**
@@ -111,10 +102,6 @@ function verifieSiLigneComplete(ligne){
  * une classe différente à la case.
  * (La fonction ne se base pas sur la case active de la grille,
  * et ne modifie pas quelle est cette case active)
- * @param ligne : Élément HTML correspondant à la ligne à vérifier
- * @param motMystere : Chaine de caractères correspondant au mot à trouver
- * @returns Le nombre de lettres bien placées dans le mot saisi
- * (FONCTION À COMPLÉTER) 
  */
 function verifieLesLettresDeLaLigne(ligne, motMystere){
   let nbLettresBienPlacees = 0;
@@ -161,7 +148,6 @@ function verifieLesLettresDeLaLigne(ligne, motMystere){
 /**
  * Fonction qui gère le cas où la partie est perdue
  * en affichant le message correspondant.
- * (FONCTION À COMPLÉTER)
  */
  function gerePartiePerdue(){
   document.getElementById("message_partie_perdue").classList.remove("cache");
@@ -172,7 +158,6 @@ function verifieLesLettresDeLaLigne(ligne, motMystere){
  * Fonction qui gère le cas où la partie est gagnée
  * en mettant à jour les différentes infos (variable globale
  * et LocalStorage) et en affichant le message correspondant.
- * (FONCTION À COMPLÉTER)
  */
 function gerePartieGagnee(ligneDernierEssai){
   nbMotsTrouves++;
@@ -192,7 +177,6 @@ function gerePartieGagnee(ligneDernierEssai){
  * Fonction qui réinitialise le jeu en cachant
  * tous les messages possiblement affichés
  * et en ré-initialisant la grille de jeu.
- * (FONCTION À COMPLÉTER)
  */
  function reinitialiseLeJeu() {
   cacheTousLesMessages();
@@ -206,7 +190,6 @@ function gerePartieGagnee(ligneDernierEssai){
       document.getElementById("grille_jeu").children[i].children[j].classList.remove("pas_dans_mot");
     }
   }
-  //1e case de la 1e ligne comme case active
   activePremiereCaseDeLaLigne(document.getElementById("grille_jeu").children[0]);
 }
 
@@ -214,7 +197,6 @@ function gerePartieGagnee(ligneDernierEssai){
  * Fonction qui lance une nouvelle partie en ré-initialisant
  * le jeu et faisant un appel AJAX pour tirer au hasard
  * un nouveau mot mystère.
- * (FONCTION À COMPLÉTER)
  */
 function lanceNouvellePartie() {
   if (confirm("Voulez-vous vraiment lancer une nouvelle partie ?")){
@@ -229,9 +211,6 @@ function lanceNouvellePartie() {
 /**
  * Fonction callback qui prend en paramètre la réponse de l'appel AJAX
  * et met à jour le mot mystère.
- * @param res : Chaine de caractères correspondant à ce que
- * renvoie l'appel AJAX
- * (FONCTION À COMPLÉTER)
  */
 function majMotMystere(res) {
   motMystere=res;

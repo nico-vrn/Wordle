@@ -7,8 +7,6 @@ const NB_LETTRES_MOT = 5;
  * Si jamais il y a plusieurs cases actives dans la grille (ce qui
  * correspondrait à un bug dans le jeu), la fonction retourne
  * la 1ère case active trouvée sans faire d'erreur.
- * @returns La case active (ou NULL)
- * (FONCTION À NE PAS MODIFIER !)
  */
 function retourneCaseActive() {
   let caseActive = document.querySelector(".case_active");
@@ -24,8 +22,6 @@ function retourneCaseActive() {
  * Fonction qui retourne la ligne de la grille contenant la case active
  * (c'est-à-dire la ligne qui correspond à l'essai en cours)
  * ou alors NULL s'il n'y a pas de case active dans la grille.
- * @returns La ligne active (ou NULL)
- * (FONCTION À NE PAS MODIFIER !)
  */
 function retourneLigneActive() {
   let caseActive = retourneCaseActive();
@@ -40,9 +36,6 @@ function retourneLigneActive() {
  * Fonction qui retourne la ligne qui suit celle passée en paramètre
  * ou alors NULL si la ligne passée en paramètre est la
  * dernière ligne de la grille
- * @param ligne : Élément HTML correspondant à une ligne de la grille
- * @returns La ligne suivante (ou NULL)
- * (FONCTION À NE PAS MODIFIER !)
  */
 function retourneLigneSuivante(ligne) {
   if(ligne){
@@ -55,8 +48,6 @@ function retourneLigneSuivante(ligne) {
 /**
  * Fonction qui active la 1ère case de la ligne passée en paramètre
  * (La fonction ne vérifie pas s'il y a déjà une case active ou non)
- * @param ligne : Élément HTML correspondant à une ligne de la grille
- * (FONCTION À NE PAS MODIFIER !)
  */
  function activePremiereCaseDeLaLigne(ligne){
   let premiereCase = ligne.querySelector("input");
@@ -67,7 +58,6 @@ function retourneLigneSuivante(ligne) {
  * Fonction qui décale la case active à celle juste à sa gauche.
  * S'il n'y a pas de case active ou que la case active n'a pas de case
  * à sa gauche, la fonction ne fait rien.
- * (FONCTION À NE PAS MODIFIER !)
  */
 function decaleCaseActiveAGauche() {
   let caseActive = retourneCaseActive();
@@ -81,7 +71,6 @@ function decaleCaseActiveAGauche() {
  * Fonction qui décale la case active à celle juste à sa droite.
  * S'il n'y a pas de case active ou que la case active n'a pas de case
  * à sa droite, la fonction ne fait rien.
- * (FONCTION À NE PAS MODIFIER !)
  */
 function decaleCaseActiveADroite() {
   let caseActive = retourneCaseActive();
@@ -94,11 +83,9 @@ function decaleCaseActiveADroite() {
 /**
  * Fonction qui traite toutes les étapes de la validation
  * d'un mot et vérifie si on est sur une fin de partie ou pas.
- * (FONCTION À NE PAS MODIFIER !)
  */
  function valideLeMot() {
   // Récupère la ligne active (et vérifie si on n'est pas déjà sur une partie finie)
-  // (Fonction fournie)
   let ligneActive = retourneLigneActive();
   if (ligneActive === null) {
     // Partie déjà finie => On s'arrête !
@@ -120,7 +107,6 @@ function decaleCaseActiveADroite() {
 
   // Récupère de la ligne suivante
   // Sachant que la vérification de l'existence de cette ligne suivante sera faite après
-  // (Fonction fournie)
   let ligneSuivante = retourneLigneSuivante(ligneActive);
 
   // Désactive la case active (utile dans tous les cas)
@@ -150,7 +136,6 @@ function decaleCaseActiveADroite() {
  * @param  callback : Fonction callback
  * @param  url : URL de la requête (qui doit contenir les différents paramètres d'URL)
  * @param  async : Booléen indiquant si la requête doit se faire en asynchrone ou en synchrone (asynchrone par défaut)
- * (FONCTION À NE PAS MODIFIER !)
  */
  function ajax_get_request(callback, url, async = true) {
   // Instanciation d'un objet XHR
