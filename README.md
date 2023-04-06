@@ -31,4 +31,4 @@ Vous devriez voir la page d'accueil du jeu.
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 
 # Auteur
-Ce jeu a été développé par Lefranc Nicolas.
+Ce jeu a été développé par Lefranc Nicolas en 2021.
