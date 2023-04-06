@@ -16,9 +16,11 @@ Pour installer ce jeu sur votre machine, vous devez disposer d'un environnement 
 
 
 ```git clone https://github.com/votre-utilisateur/jeu-mot-mystere.git```
+
 2. Ouvrez un terminal dans le dossier du jeu et exécutez la commande suivante pour démarrer le serveur PHP :
 
 ```php -S localhost:8000```
+
 3. Ouvrez votre navigateur web et accédez à l'URL suivante :
 
 ```http://localhost:8000```
